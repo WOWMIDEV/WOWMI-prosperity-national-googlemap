@@ -1,31 +1,963 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html><!-- This site was created in Webflow. https://www.webflow.com --><!-- Last Published: Sun Jul 03 2022 22:03:40 GMT+0000 (Coordinated Universal Time) -->
+<html data-wf-domain="prosperity-national.webflow.io" data-wf-page="62bd86b9ee7f1485929e3591"
+      data-wf-site="629f58fef317062068fa4ccc">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport"
-		content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="./css/index.css">
-  <title>Public Index.html</title>
+  <meta charset="utf-8"/>
+  <title>Brokerage Partners</title>
+  <meta content="Brokerage Partners" property="og:title"/>
+  <meta content="Brokerage Partners" property="twitter:title"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <meta content="Webflow" name="generator"/>
+  <link href="https://assets.website-files.com/629f58fef317062068fa4ccc/css/prosperity-national.webflow.197eb869b.css"
+        rel="stylesheet" type="text/css"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
+  <script type="text/javascript">WebFont.load({google: {families: ["Poppins:regular,500,600,700,800,900"]}});</script>
+  <!--[if lt IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" type="text/javascript"></script>
+  <![endif]-->
+  <script type="text/javascript">!function (o, c) {
+    var n = c.documentElement, t = " w-mod-";
+    n.className += t + "js", ("ontouchstart" in o || o.DocumentTouch && c instanceof DocumentTouch) && (n.className += t + "touch")
+  }(window, document);</script>
+  <link href="https://assets.website-files.com/629f58fef317062068fa4ccc/62a03f6161e0498ffa722f60_favicon.png"
+        rel="shortcut icon" type="image/x-icon"/>
+  <link href="https://assets.website-files.com/629f58fef317062068fa4ccc/62a03f6674eb95f1f906996b_webclip.png"
+        rel="apple-touch-icon"/>
+
+  <!--need it for map-->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"/>
+
+
 </head>
 <body>
+<div class="page">
+  <div class="main">
+    <div data-animation="default" data-collapse="medium" data-duration="400" data-easing="ease" data-easing2="ease"
+         role="banner" class="navbar w-nav">
+      <div class="cz cz--wide navbar__cz"><a href="/" class="logo w-nav-brand"><img
+        src="https://assets.website-files.com/629f58fef317062068fa4ccc/62a0696b64e2514bc3b111c9_logo.png" loading="lazy"
+        alt=""/></a>
+        <div class="navbar__links-wrapper">
+          <ul role="list" class="navbar__list w-list-unstyled">
+            <li class="navbar__list-item"><a href="#" class="navbar-list__link w-inline-block">
+              <div>Payments</div>
+            </a></li>
+            <li class="navbar__list-item">
+              <div data-hover="false" data-delay="0" class="navbar-list-link__dd w-dropdown">
+                <div class="navbar-list__link navbar-list-link__dd-link w-dropdown-toggle">
+                  <div class="dd-icon w-icon-dropdown-toggle"></div>
+                  <div>Loans &amp; programs</div>
+                </div>
+                <nav class="navbar__dd-list w-dropdown-list"><a href="/loans-programs/standard-government-issued-loans"
+                                                                class="navbar__dd-link w-dropdown-link">Standard &amp;
+                  Government-Issued Loans</a><a href="/loans-programs/first-time-home-buyer-loan-options"
+                                                class="navbar__dd-link w-dropdown-link">First Time Home Buyer Loan
+                  Options</a><a href="/loans-programs/unique-loans-and-products"
+                                class="navbar__dd-link w-dropdown-link">Unique Loans and Products</a><a
+                  href="/loans-programs/refinance" class="navbar__dd-link w-dropdown-link">Refinance</a></nav>
+              </div>
+            </li>
+            <li class="navbar__list-item">
+              <div data-hover="false" data-delay="0" class="navbar-list-link__dd w-dropdown">
+                <div class="navbar-list__link navbar-list-link__dd-link w-dropdown-toggle">
+                  <div class="dd-icon w-icon-dropdown-toggle"></div>
+                  <div>Mortgage 101</div>
+                </div>
+                <nav class="navbar__dd-list w-dropdown-list"><a href="/loans-programs/mortgage-101"
+                                                                class="navbar__dd-link w-dropdown-link">Mortgage 101</a>
+                </nav>
+              </div>
+            </li>
+            <li class="navbar__list-item">
+              <div data-hover="false" data-delay="0" class="navbar-list-link__dd w-dropdown">
+                <div class="navbar-list__link navbar-list-link__dd-link w-dropdown-toggle">
+                  <div class="dd-icon w-icon-dropdown-toggle"></div>
+                  <div>Our company</div>
+                </div>
+                <nav class="navbar__dd-list w-dropdown-list"><a href="#" class="navbar__dd-link w-dropdown-link">Privacy,
+                  security &amp; legal</a><a href="#" class="navbar__dd-link w-dropdown-link">State Licensing</a><a
+                  href="#" class="navbar__dd-link w-dropdown-link">NMLS Consumer Access</a><a href="#"
+                                                                                              class="navbar__dd-link w-dropdown-link">Careers</a><a
+                  href="#" class="navbar__dd-link w-dropdown-link">Contact Us</a><a href="#"
+                                                                                    class="navbar__dd-link w-dropdown-link">Affiliated
+                  Business<br/>Arrangement Disclosure</a><a href="#" class="navbar__dd-link w-dropdown-link">For
+                  complaints in Texas</a></nav>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="navbar__right-side"><a href="#" class="navbar__account-link w-inline-block">
+          <div class="account-icon w-embed">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" fill="currentColor" clip-rule="evenodd"
+                    d="M7 0C3.136 0 0 3.136 0 7C0 10.864 3.136 14 7 14C10.864 14 14 10.864 14 7C14 3.136 10.864 0 7 0ZM7 2.1C8.162 2.1 9.1 3.038 9.1 4.2C9.1 5.362 8.162 6.3 7 6.3C5.838 6.3 4.9 5.362 4.9 4.2C4.9 3.038 5.838 2.1 7 2.1ZM6.9998 12.0399C5.2498 12.0399 3.7028 11.1439 2.7998 9.78588C2.8208 8.39288 5.5998 7.62988 6.9998 7.62988C8.3928 7.62988 11.1788 8.39288 11.1998 9.78588C10.2968 11.1439 8.7498 12.0399 6.9998 12.0399Z"/>
+            </svg>
+          </div>
+          <div>My Account</div>
+        </a><a href="#" class="btn w-inline-block">
+          <div>Apply Now</div>
+          <div class="btn-arrow svg-button-arrow">
+            <div class="svg w-embed">
+              <svg width="100%" viewBox="0 0 7 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1.00749 1.10278L5.52171 5.60353L1 10.1028" stroke="currentColor" stroke-width="1.49726"
+                      stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+          </div>
+        </a></div>
+      </div>
+      <div class="navbar__progress-line"></div>
+    </div>
+    <div class="calculator-hero wf-section">
+      <div class="cz glossary-hero__cz">
+        <div class="calculator-hero__info"><a href="#" class="btn calculator-hero__btn w-inline-block">
+          <div class="svg calculator-hero-info__svg w-embed">
+            <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M5.53033 0.46967C5.23744 0.176777 4.76256 0.176777 4.46967 0.46967L0.46967 4.46967C0.176777 4.76256 0.176777 5.23744 0.46967 5.53033L4.46967 9.53033C4.76256 9.82322 5.23744 9.82322 5.53033 9.53033C5.82322 9.23744 5.82322 8.76256 5.53033 8.46967L2.06066 5L5.53033 1.53033C5.82322 1.23744 5.82322 0.762563 5.53033 0.46967Z"
+                    fill="currentColor"/>
+            </svg>
+          </div>
+          <div>Find us</div>
+        </a>
+          <h1 class="h1">Brokerage<br/>partners</h1></div>
+        <div class="glossary-filters-wrap">
+          <div class="glossary__search-form-wrap">
+            <div class="glossary__search-form-title">Search:</div>
+            <div class="glossary__search-form-block w-form">
+              <form id="email-form" name="email-form" data-name="Email Form" method="get" class="glossary__search-form">
+                <input type="text" class="search-field w-input" maxlength="256" name="Search" data-name="Search"
+                       placeholder="Enter a partner name" id="quicksearch"/><a href="#"
+                                                                               class="btn search-button w-inline-block">
+                <div class="search-button-icon">
+                  <div class="svg w-embed">
+                    <svg width="100%" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M1 9L5 5L1 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                            stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                </div>
+              </a></form>
+              <div class="w-form-done">
+                <div>Thank you! Your submission has been received!</div>
+              </div>
+              <div class="w-form-fail">
+                <div>Oops! Something went wrong while submitting the form.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="brokers-map wf-section">
+      <div class="cz cz--wide brokers-map__cz">
+        <div class="" style="display: none">
+          <div data-company="data">
+            <div class="" data-company="coords">41.5949241521246, -93.78031659451226</div>
+            <img src="https://assets.website-files.com/62a1f4e2a9d1a61710274014/62bdd232d1f9f41adc1364f7_yost-n-little.png" class="" data-company="image"/>
+            <div class="" data-company="name">Bakery 1</div>
+            <div class="" data-company="website">www</div>
+          </div>
+          <div data-company="data">
+            <div class="" data-company="coords">38.66592118449043, -90.62350565227594</div>
+            <img src="https://assets.website-files.com/62a1f4e2a9d1a61710274014/62bdd232d1f9f41adc1364f7_yost-n-little.png" class="" data-company="image"/>
+            <div class="" data-company="name">Bakery 3</div>
+            <div class="" data-company="website">www</div>
+          </div>
+        </div>
 
-<header>
-  <div class="container">
-	<h1 class="title-h1">Home page</h1>
+        <div class="map-wrapper">
+          <div id="map"></div>
+        </div>
+        <div class="brokers-map__info">
+          <div class="brokers-map__clw w-dyn-list" data-collection="data">
+            <div role="list" class="brokers-map__cl w-dyn-items">
+              <div role="listitem" class="brokers-map__ci w-dyn-item">
+                <div class="brokers-map__card">
+                  <div class="brokers-map-card__img-wrapper"><img
+                    src="https://assets.website-files.com/62a1f4e2a9d1a61710274014/62bdd232d1f9f41adc1364f7_yost-n-little.png"
+                    loading="lazy" alt="" class="brokers-map-card__img"/></div>
+                  <div class="brokers-map-card__info">
+                    <div>Berkshire Hathaway HomeServices Yost and Little serves Greensboro and surrounding communities
+                    </div>
+                    <a href="https://www.rhr.com/" target="_blank"
+                       class="brokers-map-card__link">https://www.rhr.com/</a></div>
+                </div>
+              </div>
+              <div role="listitem" class="brokers-map__ci w-dyn-item">
+                <div class="brokers-map__card">
+                  <div class="brokers-map-card__img-wrapper"><img
+                    src="https://assets.website-files.com/62a1f4e2a9d1a61710274014/62bdd206446c9c587c6e521d_york-simpson.png"
+                    loading="lazy" alt="" class="brokers-map-card__img"/></div>
+                  <div class="brokers-map-card__info">
+                    <div>Berkshire Hathaway HomeServices York Simpson Underwood Realty serves Raleigh, Cary, Chapel Hill
+                      and Southern Pines
+                    </div>
+                    <a href="https://www.rhr.com/" target="_blank"
+                       class="brokers-map-card__link">https://www.rhr.com/</a></div>
+                </div>
+              </div>
+              <div role="listitem" class="brokers-map__ci w-dyn-item">
+                <div class="brokers-map__card">
+                  <div class="brokers-map-card__img-wrapper"><img
+                    src="https://assets.website-files.com/62a1f4e2a9d1a61710274014/62bdd1e56519b062de3a47b2_wr.png"
+                    loading="lazy" alt="" class="brokers-map-card__img"/></div>
+                  <div class="brokers-map-card__info">
+                    <div>Wakefield Reutlinger Realtors serves Louisville, Kentucky</div>
+                    <a href="https://www.rhr.com/" target="_blank"
+                       class="brokers-map-card__link">https://www.rhr.com/</a></div>
+                </div>
+              </div>
+              <div role="listitem" class="brokers-map__ci w-dyn-item">
+                <div class="brokers-map__card">
+                  <div class="brokers-map-card__img-wrapper"><img
+                    src="https://assets.website-files.com/62a1f4e2a9d1a61710274014/62bdd1c877ce201243ad0f08_woods-bros.png"
+                    loading="lazy" alt="" class="brokers-map-card__img"/></div>
+                  <div class="brokers-map-card__info">
+                    <div>Woods Bros serves Lincoln, Southeastern, Northeastern and Central Nebraska</div>
+                    <a href="https://www.rhr.com/" target="_blank"
+                       class="brokers-map-card__link">https://www.rhr.com/</a></div>
+                </div>
+              </div>
+              <div role="listitem" class="brokers-map__ci w-dyn-item">
+                <div class="brokers-map__card">
+                  <div class="brokers-map-card__img-wrapper"><img
+                    src="https://assets.website-files.com/62a1f4e2a9d1a61710274014/62bdd1a69664fccabacaba96_williams-trew.png"
+                    loading="lazy" alt="" class="brokers-map-card__img"/></div>
+                  <div class="brokers-map-card__info">
+                    <div>A division of Ebby Halliday REALTORS, Williams Trew is Fort Worth&#x27;s leading residential
+                      real estate brokerage firm.
+                    </div>
+                    <a href="https://www.rhr.com/" target="_blank"
+                       class="brokers-map-card__link">https://www.rhr.com/</a></div>
+                </div>
+              </div>
+              <div role="listitem" class="brokers-map__ci w-dyn-item">
+                <div class="brokers-map__card">
+                  <div class="brokers-map-card__img-wrapper"><img
+                    src="https://assets.website-files.com/62a1f4e2a9d1a61710274014/62bdd185d7528199e9d1fb62_semonin.png"
+                    loading="lazy" alt="" class="brokers-map-card__img"/></div>
+                  <div class="brokers-map-card__info">
+                    <div>Semonin serves Greater Louisville, Southern Indiana, Elizabethtown and Fort Knox</div>
+                    <a href="https://www.rhr.com/" target="_blank"
+                       class="brokers-map-card__link">https://www.rhr.com/</a></div>
+                </div>
+              </div>
+              <div role="listitem" class="brokers-map__ci w-dyn-item">
+                <div class="brokers-map__card">
+                  <div class="" data-company="name">Bakery 3</div>
+                  <div class="brokers-map-card__img-wrapper"><img
+                    src="https://assets.website-files.com/62a1f4e2a9d1a61710274014/62bdd16d4a7a468a83d0db9f_rs.png"
+                    loading="lazy" alt="" class="brokers-map-card__img"/></div>
+                  <div class="brokers-map-card__info">
+                    <div>Realty South is a full-service real estate company serves Alabama and Florida Panhandle</div>
+                    <a href="https://www.rhr.com/" target="_blank"
+                       class="brokers-map-card__link">https://www.rhr.com/</a></div>
+                </div>
+              </div>
+              <div role="listitem" class="brokers-map__ci w-dyn-item">
+                <div class="brokers-map__card">
+                  <div class="brokers-map-card__img-wrapper"><img
+                    src="https://assets.website-files.com/62a1f4e2a9d1a61710274014/62bdd15146de780a1be81d45_roberts.png"
+                    loading="lazy" alt="" class="brokers-map-card__img"/></div>
+                  <div class="brokers-map-card__info">
+                    <div>Roberts Brothers serves in Mobile County, Mobile Bay and Gulf Coast areas</div>
+                    <a href="https://www.rhr.com/" target="_blank"
+                       class="brokers-map-card__link">https://www.rhr.com/</a></div>
+                </div>
+              </div>
+              <div role="listitem" class="brokers-map__ci w-dyn-item">
+                <div class="brokers-map__card">
+                  <div class="brokers-map-card__img-wrapper"><img
+                    src="https://assets.website-files.com/62a1f4e2a9d1a61710274014/62bdd13a18ebb66a1b5a2a0a_reece-nichols.png"
+                    loading="lazy" alt="" class="brokers-map-card__img"/></div>
+                  <div class="brokers-map-card__info">
+                    <div>ReeceNichols serves Kansas, Missouri, Springfield and Branson</div>
+                    <a href="https://www.rhr.com/" target="_blank"
+                       class="brokers-map-card__link">https://www.rhr.com/</a></div>
+                </div>
+              </div>
+              <div role="listitem" class="brokers-map__ci w-dyn-item">
+                <div class="brokers-map__card">
+                  <div class="brokers-map-card__img-wrapper"><img
+                    src="https://assets.website-files.com/62a1f4e2a9d1a61710274014/62bdd11d595454ed2d3ab096_Rector-Hayden.png"
+                    loading="lazy" alt="" class="brokers-map-card__img"/></div>
+                  <div class="brokers-map-card__info">
+                    <div>Rector Hayden serves the Lexington and Central Kentucky Regions</div>
+                    <a href="https://www.rhr.com/" target="_blank"
+                       class="brokers-map-card__link">https://www.rhr.com/</a></div>
+                </div>
+              </div>
+              <div role="listitem" class="brokers-map__ci w-dyn-item">
+                <div class="brokers-map__card">
+                  <div class="brokers-map-card__img-wrapper"><img
+                    src="https://assets.website-files.com/62a1f4e2a9d1a61710274014/62bdd0fca70dc43cb57f5aff_real-estate-professionals.png"
+                    loading="lazy" alt="" class="brokers-map-card__img"/></div>
+                  <div class="brokers-map-card__info">
+                    <div>Berkshire Hathaway Real Estate Professionals serves the Oregon cities of Salem, Eugene and
+                      Roseburg
+                    </div>
+                    <a href="https://www.rhr.com/" target="_blank"
+                       class="brokers-map-card__link">https://www.rhr.com/</a></div>
+                </div>
+              </div>
+              <div role="listitem" class="brokers-map__ci w-dyn-item">
+                <div class="brokers-map__card">
+                  <div class="" data-company="name">Bakery 1</div>
+                  <div class="brokers-map-card__img-wrapper"><img
+                    src="https://assets.website-files.com/62a1f4e2a9d1a61710274014/62bdd0d6a70dc485c27f5ab8_pinehurst.png"
+                    loading="lazy" alt="" class="brokers-map-card__img"/></div>
+                  <div class="brokers-map-card__info">
+                    <div>Berkshire Hathaway HomeServices Pinehurst Realty Group serves the Pinehurst and Southern Pines
+                      areas of North Carolina
+                    </div>
+                    <a href="https://www.rhr.com/" target="_blank"
+                       class="brokers-map-card__link">https://www.rhr.com/</a></div>
+                </div>
+              </div>
+              <div role="listitem" class="brokers-map__ci w-dyn-item">
+                <div class="brokers-map__card">
+                  <div class="brokers-map-card__img-wrapper"><img
+                    src="https://assets.website-files.com/62a1f4e2a9d1a61710274014/62bdd09e825d390da9f9addd_northwest-real-estate.png"
+                    loading="lazy" alt="" class="brokers-map-card__img"/></div>
+                  <div class="brokers-map-card__info">
+                    <div>Berkshire Hathaway HomeServices NW Real Estate serves the Portland/Vancouver metro area,
+                      Central Oregon, the Oregon Coast and Southwest Washington.
+                    </div>
+                    <a href="https://www.rhr.com/" target="_blank"
+                       class="brokers-map-card__link">https://www.rhr.com/</a></div>
+                </div>
+              </div>
+              <div role="listitem" class="brokers-map__ci w-dyn-item">
+                <div class="brokers-map__card">
+                  <div class="brokers-map-card__img-wrapper"><img
+                    src="https://assets.website-files.com/62a1f4e2a9d1a61710274014/62bdd06b5eeced5f16efd995_nilson.png"
+                    loading="lazy" alt="" class="brokers-map-card__img"/></div>
+                  <div class="brokers-map-card__info">
+                    <div>Gloria Nilson &amp; Co. Real Estate serves Central New Jersey and Eastern Pennsylvania with
+                      offices located in Monmouth, Ocean, Mercer, Middlesex, Bucks and Morris
+                    </div>
+                    <a href="https://www.rhr.com/" target="_blank"
+                       class="brokers-map-card__link">https://www.rhr.com/</a></div>
+                </div>
+              </div>
+              <div role="listitem" class="brokers-map__ci w-dyn-item">
+                <div class="" data-company="name">Bakery 2</div>
+                <div class="brokers-map__card">
+                  <div class="brokers-map-card__img-wrapper"><img
+                    src="https://assets.website-files.com/62a1f4e2a9d1a61710274014/62bdd03eeb197e42c8ea5c5c_new-england.png"
+                    loading="lazy" alt="" class="brokers-map-card__img"/></div>
+                  <div class="brokers-map-card__info">
+                    <div>New England Properties serves Connecticut, Massachusetts and Rhode Island.</div>
+                    <a href="https://www.rhr.com/" target="_blank"
+                       class="brokers-map-card__link">https://www.rhr.com/</a></div>
+                </div>
+              </div>
+              <div role="listitem" class="brokers-map__ci w-dyn-item">
+                <div class="brokers-map__card">
+                  <div class="brokers-map-card__img-wrapper"><img
+                    src="https://assets.website-files.com/62a1f4e2a9d1a61710274014/62bdd0226dd6c8e8da2ee5a4_long-realty.png"
+                    loading="lazy" alt="" class="brokers-map-card__img"/></div>
+                  <div class="brokers-map-card__info">
+                    <div>Long Realty serves communities throughout Arizona, including Tucson, Green Valley, Sierra
+                      Vista, Phoenix, and many more.
+                    </div>
+                    <a href="https://www.rhr.com/" target="_blank"
+                       class="brokers-map-card__link">https://www.rhr.com/</a></div>
+                </div>
+              </div>
+              <div role="listitem" class="brokers-map__ci w-dyn-item">
+                <div class="brokers-map__card">
+                  <div class="brokers-map-card__img-wrapper"><img
+                    src="https://assets.website-files.com/62a1f4e2a9d1a61710274014/62bdcff8eb197ed1aeea5ae6_long-n-foster.png"
+                    loading="lazy" alt="" class="brokers-map-card__img"/></div>
+                  <div class="brokers-map-card__info">
+                    <div>Long &amp; Foster Real Estate serves major markets across the Mid-Atlantic and beyond,
+                      including VA, MD, the D.C., WV, NC, PA, DE, and NJ
+                    </div>
+                    <a href="https://www.rhr.com/" target="_blank"
+                       class="brokers-map-card__link">https://www.rhr.com/</a></div>
+                </div>
+              </div>
+              <div role="listitem" class="brokers-map__ci w-dyn-item">
+                <div class="brokers-map__card">
+                  <div class="brokers-map-card__img-wrapper"><img
+                    src="https://assets.website-files.com/62a1f4e2a9d1a61710274014/62bdcfb298c0b4af81bdb14f_kentwood.png"
+                    loading="lazy" alt="" class="brokers-map-card__img"/></div>
+                  <div class="brokers-map-card__info">
+                    <div>Kentwood Real Estate services the Denver metropolitan area and surrounding communities</div>
+                    <a href="https://www.rhr.com/" target="_blank"
+                       class="brokers-map-card__link">https://www.rhr.com/</a></div>
+                </div>
+              </div>
+              <div role="listitem" class="brokers-map__ci w-dyn-item">
+                <div class="brokers-map__card">
+                  <div class="brokers-map-card__img-wrapper"><img
+                    src="https://assets.website-files.com/62a1f4e2a9d1a61710274014/62bdcf8c6836481b3ca989e6_kansas-city-realty.png"
+                    loading="lazy" alt="" class="brokers-map-card__img"/></div>
+                  <div class="brokers-map-card__info">
+                    <div>Berkshire Hathaway HomeServices Kansas City Realty serves the Kansas City metro area</div>
+                    <a href="https://www.rhr.com/" target="_blank"
+                       class="brokers-map-card__link">https://www.rhr.com/</a></div>
+                </div>
+              </div>
+              <div role="listitem" class="brokers-map__ci w-dyn-item">
+                <div class="brokers-map__card">
+                  <div class="brokers-map-card__img-wrapper"><img
+                    src="https://assets.website-files.com/62a1f4e2a9d1a61710274014/62bdcf66ede8ac4565bf7c4c_intero.png"
+                    loading="lazy" alt="" class="brokers-map-card__img"/></div>
+                  <div class="brokers-map-card__info">
+                    <div>Intero Real Estate Services serves the California areas of San Mateo, Santa Clara and San
+                      Benito
+                    </div>
+                    <a href="https://www.rhr.com/" target="_blank"
+                       class="brokers-map-card__link">https://www.rhr.com/</a></div>
+                </div>
+              </div>
+              <div role="listitem" class="brokers-map__ci w-dyn-item">
+                <div class="brokers-map__card">
+                  <div class="brokers-map-card__img-wrapper"><img
+                    src="https://assets.website-files.com/62a1f4e2a9d1a61710274014/62bdcf38a9ba00e178ed34bc_huff.png"
+                    loading="lazy" alt="" class="brokers-map-card__img"/></div>
+                  <div class="brokers-map-card__info">
+                    <div>Huff Realty serves Southern Ohio, Northern Kentucky and Southeastern Indiana</div>
+                    <a href="https://www.rhr.com/" target="_blank"
+                       class="brokers-map-card__link">https://www.rhr.com/</a></div>
+                </div>
+              </div>
+              <div role="listitem" class="brokers-map__ci w-dyn-item">
+                <div class="brokers-map__card">
+                  <div class="brokers-map-card__img-wrapper"><img
+                    src="https://assets.website-files.com/62a1f4e2a9d1a61710274014/62bdcf20a9ba004fe9ed33b1_houlihan-lawrence.png"
+                    loading="lazy" alt="" class="brokers-map-card__img"/></div>
+                  <div class="brokers-map-card__info">
+                    <div>Houlihan Lawrence serves the Westchester, Fairfield, Putnam, Dutchess, Orange and Ulster
+                      counties of New York and Connecticut.
+                    </div>
+                    <a href="https://www.rhr.com/" target="_blank"
+                       class="brokers-map-card__link">https://www.rhr.com/</a></div>
+                </div>
+              </div>
+              <div role="listitem" class="brokers-map__ci w-dyn-item">
+                <div class="brokers-map__card">
+                  <div class="brokers-map-card__img-wrapper"><img
+                    src="https://assets.website-files.com/62a1f4e2a9d1a61710274014/62bdcf01f3223e5671780a9c_home-real-estate.png"
+                    loading="lazy" alt="" class="brokers-map-card__img"/></div>
+                  <div class="brokers-map-card__info">
+                    <div>HOME Real Estate serves Lincoln, Nebraska and surrounding areas</div>
+                    <a href="https://www.rhr.com/" target="_blank"
+                       class="brokers-map-card__link">https://www.rhr.com/</a></div>
+                </div>
+              </div>
+              <div role="listitem" class="brokers-map__ci w-dyn-item">
+                <div class="brokers-map__card">
+                  <div class="brokers-map-card__img-wrapper"><img
+                    src="https://assets.website-files.com/62a1f4e2a9d1a61710274014/62bdcee04761d119128b5ef6_harry-horman.png"
+                    loading="lazy" alt="" class="brokers-map-card__img"/></div>
+                  <div class="brokers-map-card__info">
+                    <div>Harry Norman, Realtors TM serves Metro Atlanta, North Georgia, South Georgia, and Highlands,
+                      North Carolina
+                    </div>
+                    <a href="https://www.rhr.com/" target="_blank"
+                       class="brokers-map-card__link">https://www.rhr.com/</a></div>
+                </div>
+              </div>
+              <div role="listitem" class="brokers-map__ci w-dyn-item">
+                <div class="brokers-map__card">
+                  <div class="brokers-map-card__img-wrapper"><img
+                    src="https://assets.website-files.com/62a1f4e2a9d1a61710274014/62bdcebc18ebb606565a1b79_guarantee.png"
+                    loading="lazy" alt="" class="brokers-map-card__img"/></div>
+                  <div class="brokers-map-card__info">
+                    <div>Guarantee Real Estate serves Fresno and central California</div>
+                    <a href="https://www.rhr.com/" target="_blank"
+                       class="brokers-map-card__link">https://www.rhr.com/</a></div>
+                </div>
+              </div>
+              <div role="listitem" class="brokers-map__ci w-dyn-item">
+                <div class="brokers-map__card">
+                  <div class="brokers-map-card__img-wrapper"><img
+                    src="https://assets.website-files.com/62a1f4e2a9d1a61710274014/62bdce8e0b8d4bc3805b01fb_georgia.png"
+                    loading="lazy" alt="" class="brokers-map-card__img"/></div>
+                  <div class="brokers-map-card__info">
+                    <div>Berkshire Hathaway HomeServices Georgia Properties serves the greater metro area of Atlanta
+                    </div>
+                    <a href="https://www.rhr.com/" target="_blank"
+                       class="brokers-map-card__link">https://www.rhr.com/</a></div>
+                </div>
+              </div>
+              <div role="listitem" class="brokers-map__ci w-dyn-item">
+                <div class="brokers-map__card">
+                  <div class="brokers-map-card__img-wrapper"><img
+                    src="https://assets.website-files.com/62a1f4e2a9d1a61710274014/62bdce545fb4fcf857c05849_fox-n-roach.png"
+                    loading="lazy" alt="" class="brokers-map-card__img"/></div>
+                  <div class="brokers-map-card__info">
+                    <div>Berkshire Hathaway HomeServices Fox &amp; Roach, Realtors TM serves the Tri-State region of
+                      Pennsylvania, New Jersey and Delaware
+                    </div>
+                    <a href="https://www.rhr.com/" target="_blank"
+                       class="brokers-map-card__link">https://www.rhr.com/</a></div>
+                </div>
+              </div>
+              <div role="listitem" class="brokers-map__ci w-dyn-item">
+                <div class="brokers-map__card">
+                  <div class="brokers-map-card__img-wrapper"><img
+                    src="https://assets.website-files.com/62a1f4e2a9d1a61710274014/62bdce1e4e3aa72cb513b71f_fonville-morisey.png"
+                    loading="lazy" alt="" class="brokers-map-card__img"/></div>
+                  <div class="brokers-map-card__info">
+                    <div>Fonville Morisey serves the Greater Triangle and Fayetteville markets of North Carolina</div>
+                    <a href="https://www.rhr.com/" target="_blank"
+                       class="brokers-map-card__link">https://www.rhr.com/</a></div>
+                </div>
+              </div>
+              <div role="listitem" class="brokers-map__ci w-dyn-item">
+                <div class="brokers-map__card">
+                  <div class="brokers-map-card__img-wrapper"><img
+                    src="https://assets.website-files.com/62a1f4e2a9d1a61710274014/62bdcdec6519b090143a2a50_floride-network.png"
+                    loading="lazy" alt="" class="brokers-map-card__img"/></div>
+                  <div class="brokers-map-card__info">
+                    <div>Berkshire Hathaway HomeServices Florida Network Realty serves the Jackson Metropolitan area,
+                      Duval, St. Johns and Clay counties
+                    </div>
+                    <a href="https://www.rhr.com/" target="_blank"
+                       class="brokers-map-card__link">https://www.rhr.com/</a></div>
+                </div>
+              </div>
+              <div role="listitem" class="brokers-map__ci w-dyn-item">
+                <div class="brokers-map__card">
+                  <div class="brokers-map-card__img-wrapper"><img
+                    src="https://assets.website-files.com/62a1f4e2a9d1a61710274014/62bdcdb4633894a239484e97_florida-realty.png"
+                    loading="lazy" alt="" class="brokers-map-card__img"/></div>
+                  <div class="brokers-map-card__info">
+                    <div>Berkshire Hathaway HomeServices Florida Realty serves 21 counties throughout Florida with more
+                      than 40 locations and approximately 1,750 sales professionals.
+                    </div>
+                    <a href="https://www.rhr.com/" target="_blank"
+                       class="brokers-map-card__link">https://www.rhr.com/</a></div>
+                </div>
+              </div>
+              <div role="listitem" class="brokers-map__ci w-dyn-item">
+                <div class="brokers-map__card">
+                  <a href="#" class="" data-company="modal-link"></a>
+                  <div class="brokers-map-card__img-wrapper"><img
+                    src="https://assets.website-files.com/62a1f4e2a9d1a61710274014/62bdcd9417736d48d134f9df_first-weber.png"
+                    loading="lazy" alt="" class="brokers-map-card__img"/></div>
+                  <div class="brokers-map-card__info">
+                    <div>First Weber Realtors TM serves Madison, Milwaukee, central Wisconsin, the Fox Valley and the
+                      Northwoods
+                    </div>
+                    <a href="https://www.rhr.com/" target="_blank"
+                       class="brokers-map-card__link">https://www.rhr.com/</a></div>
+                </div>
+              </div>
+              <div role="listitem" class="brokers-map__ci w-dyn-item">
+                <div class="brokers-map__card">
+                  <div class="brokers-map-card__img-wrapper"><img
+                    src="https://assets.website-files.com/62a1f4e2a9d1a61710274014/62bdcd65a9ba001450ed234a_first-realty.png"
+                    loading="lazy" alt="" class="brokers-map-card__img"/></div>
+                  <div class="brokers-map-card__info">
+                    <div>Berkshire Hathaway HomeServices First Realty serves Des Moines, IA and surrounding Areas</div>
+                    <a href="https://www.rhr.com/" target="_blank"
+                       class="brokers-map-card__link">https://www.rhr.com/</a></div>
+                </div>
+              </div>
+              <div role="listitem" class="brokers-map__ci w-dyn-item">
+                <div class="brokers-map__card">
+                  <div class="brokers-map-card__img-wrapper"><img
+                    src="https://assets.website-files.com/62a1f4e2a9d1a61710274014/62bdcd4246de783681e7ee47_ewm.png"
+                    loading="lazy" alt="" class="brokers-map-card__img"/></div>
+                  <div class="brokers-map-card__info">
+                    <div>EWM serves Southern Florida, Miami Dade, Brower and Palm Beach counties</div>
+                    <a href="https://www.rhr.com/" target="_blank"
+                       class="brokers-map-card__link">https://www.rhr.com/</a></div>
+                </div>
+              </div>
+              <div role="listitem" class="brokers-map__ci w-dyn-item">
+                <div class="brokers-map__card">
+                  <div class="brokers-map-card__img-wrapper"><img
+                    src="https://assets.website-files.com/62a1f4e2a9d1a61710274014/62bdcd2298be0cf8228d701a_edina-realty.png"
+                    loading="lazy" alt="" class="brokers-map-card__img"/></div>
+                  <div class="brokers-map-card__info">
+                    <div>Edina Realty serves Minnesota, Western Wisconsin and Fargo, North Dakota</div>
+                    <a href="https://www.rhr.com/" target="_blank"
+                       class="brokers-map-card__link">https://www.rhr.com/</a></div>
+                </div>
+              </div>
+              <div role="listitem" class="brokers-map__ci w-dyn-item">
+                <div class="brokers-map__card">
+                  <div class="brokers-map-card__img-wrapper"><img
+                    src="https://assets.website-files.com/62a1f4e2a9d1a61710274014/62bdcc147b63c75c9a8fb751_ebby.png"
+                    loading="lazy" alt="" class="brokers-map-card__img"/></div>
+                  <div class="brokers-map-card__info">
+                    <div>Ebby Halliday Realtors® serves metropolitan Dallas-Fort Worth and surrounding communities.
+                    </div>
+                    <a href="https://www.rhr.com/" target="_blank"
+                       class="brokers-map-card__link">https://www.rhr.com/</a></div>
+                </div>
+              </div>
+              <div role="listitem" class="brokers-map__ci w-dyn-item">
+                <div class="brokers-map__card">
+                  <div class="brokers-map-card__img-wrapper"><img
+                    src="https://assets.website-files.com/62a1f4e2a9d1a61710274014/62bdcbda06ce2fc349f8aab1_dave-perry-miller.png"
+                    loading="lazy" alt="" class="brokers-map-card__img"/></div>
+                  <div class="brokers-map-card__info">
+                    <div>A division of Ebby Halliday REALTORS, Dave Perry Miller is a luxury leader serving North
+                      Texas.
+                    </div>
+                    <a href="https://www.rhr.com/" target="_blank"
+                       class="brokers-map-card__link">https://www.rhr.com/</a></div>
+                </div>
+              </div>
+              <div role="listitem" class="brokers-map__ci w-dyn-item">
+                <div class="brokers-map__card">
+                  <div class="brokers-map-card__img-wrapper"><img
+                    src="https://assets.website-files.com/62a1f4e2a9d1a61710274014/62bdcb16072ab37553a53846_chicago.png"
+                    loading="lazy" alt="" class="brokers-map-card__img"/></div>
+                  <div class="brokers-map-card__info">
+                    <div>Berkshire Hathaway HomeServices Chicago serves Chicago metropolitan area and surrounding
+                      communities and Southeastern Wisconsin
+                    </div>
+                    <a href="https://www.rhr.com/" target="_blank"
+                       class="brokers-map-card__link">https://www.rhr.com/</a></div>
+                </div>
+              </div>
+              <div role="listitem" class="brokers-map__ci w-dyn-item">
+                <div class="brokers-map__card">
+                  <div class="brokers-map-card__img-wrapper"><img
+                    src="https://assets.website-files.com/62a1f4e2a9d1a61710274014/62bdcae617736d6ac834e461_carolinas-realty.png"
+                    loading="lazy" alt="" class="brokers-map-card__img"/></div>
+                  <div class="brokers-map-card__info">
+                    <div>Berkshire Hathaway HomeServices Carolinas Realty serves the Winston-Salem and Charlotte markets
+                      in North Carolina
+                    </div>
+                    <a href="https://www.rhr.com/" target="_blank"
+                       class="brokers-map-card__link">https://www.rhr.com/</a></div>
+                </div>
+              </div>
+              <div role="listitem" class="brokers-map__ci w-dyn-item">
+                <div class="brokers-map__card">
+                  <div class="brokers-map-card__img-wrapper"><img
+                    src="https://assets.website-files.com/62a1f4e2a9d1a61710274014/62bdcabdc8f30a8321ec35fd_california-properties.png"
+                    loading="lazy" alt="" class="brokers-map-card__img"/></div>
+                  <div class="brokers-map-card__info">
+                    <div>Berkshire Hathaway HomeServices California Properties serves the Southern California market
+                      including Santa Barbara, Los Angeles, Orange, Ventura, and San Diego counties
+                    </div>
+                    <a href="https://www.rhr.com/" target="_blank"
+                       class="brokers-map-card__link">https://www.rhr.com/</a></div>
+                </div>
+              </div>
+              <div role="listitem" class="brokers-map__ci w-dyn-item">
+                <div class="brokers-map__card">
+                  <div class="brokers-map-card__img-wrapper"><img
+                    src="https://assets.website-files.com/62a1f4e2a9d1a61710274014/62bdca4779b994b8570b8bd2_ambassador.png"
+                    loading="lazy" alt="" class="brokers-map-card__img"/></div>
+                  <div class="brokers-map-card__info">
+                    <div>Berkshire Hathaway HomeServices Ambassador Real Estate serves Omaha, Lincoln, Council Bluffs,
+                      Fremont, and Dundee communities.
+                    </div>
+                    <a href="https://www.rhr.com/" target="_blank"
+                       class="brokers-map-card__link">https://www.rhr.com/</a></div>
+                </div>
+              </div>
+              <div role="listitem" class="brokers-map__ci w-dyn-item">
+                <div class="brokers-map__card">
+                  <div class="brokers-map-card__img-wrapper"><img
+                    src="https://assets.website-files.com/62a1f4e2a9d1a61710274014/62bdca03e45d878a75b1dc42_allie-beth.png"
+                    loading="lazy" alt="" class="brokers-map-card__img"/></div>
+                  <div class="brokers-map-card__info">
+                    <div>Allie Beth Allman &amp; Associates serves the Dallas-Fort Worth Metro and surrounding
+                      communities
+                    </div>
+                    <a href="https://www.rhr.com/" target="_blank"
+                       class="brokers-map-card__link">https://www.rhr.com/</a></div>
+                </div>
+              </div>
+              <div role="listitem" class="brokers-map__ci w-dyn-item">
+                <div class="brokers-map__card">
+                  <div class="brokers-map-card__img-wrapper"><img
+                    src="https://assets.website-files.com/62a1f4e2a9d1a61710274014/62bdc98b4e3aa784a51396e8_alliance-real-estate.png"
+                    loading="lazy" alt="" class="brokers-map-card__img"/></div>
+                  <div class="brokers-map-card__info">
+                    <div>Berkshire Hathaway HomeServices Alliance Real Estate is a locally owned, full-service real
+                      estate company serving the metropolitan St. Louis area.
+                    </div>
+                    <a href="https://www.rhr.com/" target="_blank"
+                       class="brokers-map-card__link">https://www.rhr.com/</a></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="cz cz--wide bp-info__cz">
+        <div class="brokerage-partners-info__block">
+          <div>Please see <a href="#" class="span-link span-link--decoration-none">Prosperity&#x27;s Affiliated Business
+            Arrangement Disclosure Statement</a> for more information on the relationship between Prosperity and the
+            companies listed above. Although Prosperity has an affiliate relationship with the owner of these websites,
+            Prosperity does not control these entities nor does it provide any of the products and services offered by
+            these companies. Please review the applicable privacy and security policies and the terms and conditions for
+            the websites you visit.
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer wf-section">
+      <div class="cz cz--wide footer__cz">
+        <div class="footer__left-side"><a href="#" class="footer__logo w-inline-block"><img
+          src="https://assets.website-files.com/629f58fef317062068fa4ccc/62a0696b64e2514bc3b111c9_logo.png"
+          loading="lazy" alt=""/></a>
+          <div class="w-dyn-list">
+            <div role="list" class="w-dyn-items">
+              <div role="listitem" class="footer__cm-ci w-dyn-item"><a href="#" class="footer__sm-link w-inline-block">
+                <div class="footer__sm-svg w-embed">
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M3.55003 13.9505C2.71745 13.9126 2.26516 13.7741 1.96434 13.6567C1.56573 13.5015 1.28154 13.3168 0.982376 13.018C0.683211 12.7193 0.498053 12.4351 0.343686 12.0365C0.22635 11.7357 0.0877939 11.2834 0.0499302 10.4508C0.00832169 9.55081 0 9.28077 0 7.00062C0 4.72048 0.00915386 4.45086 0.0495141 3.55003C0.0873778 2.71745 0.226766 2.266 0.34327 1.96434C0.498469 1.56573 0.683627 1.28154 0.98196 0.98196C1.28071 0.683211 1.56489 0.497637 1.96392 0.34327C2.26475 0.225934 2.71703 0.0873778 3.54962 0.0495141C4.45003 0.00832169 4.72048 0 6.99979 0C9.27994 0 9.54956 0.00915386 10.4504 0.0495141C11.283 0.0873778 11.7344 0.226766 12.0361 0.34327C12.4347 0.497637 12.7189 0.683211 13.018 0.98196C13.3172 1.28071 13.5015 1.56531 13.6567 1.96392C13.7741 2.26475 13.9126 2.71703 13.9505 3.54962C13.9917 4.45044 14 4.72006 14 7.00021C14 9.27952 13.9917 9.54997 13.9505 10.4508C13.9126 11.2834 13.7732 11.7357 13.6567 12.0365C13.5015 12.4351 13.3168 12.7193 13.018 13.018C12.7193 13.3168 12.4347 13.5015 12.0361 13.6567C11.7353 13.7741 11.283 13.9126 10.4504 13.9505C9.55039 13.9917 9.27994 14 6.99979 14C4.72048 14 4.45003 13.9921 3.55003 13.9505"
+                      fill="currentColor" fill-opacity="0.3"/>
+                    <path
+                      d="M3.55003 13.9505C2.71745 13.9126 2.26516 13.7741 1.96434 13.6567C1.56573 13.5015 1.28154 13.3168 0.982376 13.018C0.683211 12.7193 0.498053 12.4351 0.343686 12.0365C0.22635 11.7357 0.0877939 11.2834 0.0499302 10.4508C0.00832169 9.55081 0 9.28077 0 7.00062C0 4.72048 0.00915387 4.45086 0.0495141 3.55003C0.0873778 2.71745 0.226766 2.266 0.34327 1.96434C0.498469 1.56573 0.683627 1.28154 0.98196 0.98196C1.28071 0.683211 1.56489 0.497637 1.96392 0.34327C2.26475 0.225934 2.71703 0.0873778 3.54962 0.0495141C4.45003 0.00832169 4.72048 0 6.99979 0C9.27994 0 9.54956 0.00915387 10.4504 0.0495141C11.283 0.0873778 11.7344 0.226766 12.0361 0.34327C12.4347 0.497637 12.7189 0.683211 13.018 0.98196C13.3172 1.28071 13.5015 1.56531 13.6567 1.96392C13.7741 2.26475 13.9126 2.71703 13.9505 3.54962C13.9917 4.45044 14 4.72006 14 7.00021C14 9.27952 13.9917 9.54998 13.9505 10.4508C13.9126 11.2834 13.7732 11.7357 13.6567 12.0365C13.5015 12.4351 13.3168 12.7193 13.018 13.018C12.7193 13.3168 12.4347 13.5015 12.0361 13.6567C11.7353 13.7741 11.283 13.9126 10.4504 13.9505C9.55039 13.9917 9.27994 14 6.99979 14C4.72048 14 4.45003 13.9921 3.55003 13.9505"
+                      fill="#232323"/>
+                    <path
+                      d="M5.28112 7.0299C5.28112 6.07245 6.05707 5.29608 7.01452 5.29608C7.97197 5.29608 8.74834 6.07245 8.74834 7.0299C8.74834 7.98735 7.97197 8.76372 7.01452 8.76372C6.05707 8.76372 5.28112 7.98735 5.28112 7.0299V7.0299ZM4.34385 7.0299C4.34385 8.50491 5.53951 9.70057 7.01452 9.70057C8.48954 9.70057 9.6852 8.50491 9.6852 7.0299C9.6852 5.55488 8.48954 4.35923 7.01452 4.35923C5.53951 4.35923 4.34389 5.5548 4.34389 7.0299H4.34385ZM9.16684 4.25333C9.16679 4.37677 9.20335 4.49746 9.27189 4.60012C9.34042 4.70278 9.43787 4.78282 9.55189 4.8301C9.66592 4.87739 9.7914 4.8898 9.91248 4.86576C10.0336 4.84173 10.1448 4.78233 10.2321 4.69508C10.3194 4.60783 10.3789 4.49665 10.403 4.37559C10.4272 4.25453 10.4149 4.12903 10.3677 4.01497C10.3205 3.90091 10.2405 3.8034 10.1379 3.73478C10.0353 3.66616 9.91466 3.62951 9.79122 3.62946H9.79097C9.6255 3.62953 9.46684 3.69528 9.34982 3.81226C9.23279 3.92923 9.16698 4.08787 9.16684 4.25333V4.25333ZM4.9133 11.2635C4.40622 11.2404 4.1306 11.1559 3.94744 11.0845C3.70462 10.99 3.53136 10.8774 3.3492 10.6955C3.16704 10.5136 3.05428 10.3405 2.96016 10.0977C2.88876 9.9146 2.8043 9.63891 2.78125 9.13183C2.75603 8.58359 2.751 8.41891 2.751 7.02998C2.751 5.64105 2.75645 5.47683 2.78125 4.92814C2.80434 4.42106 2.88943 4.1459 2.96016 3.96228C3.0547 3.71946 3.16729 3.5462 3.3492 3.36404C3.53111 3.18188 3.7042 3.06912 3.94744 2.975C4.13052 2.9036 4.40622 2.81914 4.9133 2.79608C5.46153 2.77087 5.62622 2.76584 7.01452 2.76584C8.40283 2.76584 8.56768 2.7712 9.11637 2.79617C9.62345 2.81926 9.89861 2.90435 10.0822 2.97508C10.3251 3.0692 10.4983 3.18221 10.6805 3.36412C10.8626 3.54603 10.975 3.71954 11.0695 3.96237C11.1409 4.14544 11.2254 4.42114 11.2484 4.92822C11.2736 5.47691 11.2787 5.64114 11.2787 7.03006C11.2787 8.41899 11.2736 8.58322 11.2484 9.13191C11.2253 9.63899 11.1404 9.9146 11.0695 10.0978C10.975 10.3406 10.8624 10.5138 10.6805 10.6956C10.4986 10.8773 10.3251 10.9901 10.0822 11.0846C9.89915 11.156 9.62345 11.2405 9.11637 11.2635C8.56814 11.2888 8.40345 11.2938 7.01452 11.2938C5.62559 11.2938 5.46137 11.2888 4.9133 11.2635V11.2635ZM4.87024 1.86035C4.31655 1.88557 3.93821 1.97336 3.6078 2.10193C3.26582 2.23471 2.97593 2.41283 2.68646 2.70184C2.39699 2.99085 2.21932 3.28078 2.08655 3.62317C1.95798 3.95379 1.87019 4.33193 1.84497 4.88561C1.81934 5.44017 1.81348 5.61746 1.81348 7.0299C1.81348 8.44233 1.81934 8.61963 1.84497 9.17418C1.87019 9.72791 1.95798 10.106 2.08655 10.4366C2.21932 10.7786 2.39703 11.0691 2.68646 11.358C2.97589 11.6468 3.2654 11.8247 3.6078 11.9579C3.93883 12.0864 4.31655 12.1742 4.87024 12.1994C5.42508 12.2247 5.60208 12.2309 7.01452 12.2309C8.42696 12.2309 8.60425 12.2251 9.15881 12.1994C9.71253 12.1742 10.0906 12.0864 10.4212 11.9579C10.7632 11.8247 11.0531 11.647 11.3426 11.358C11.6321 11.0689 11.8093 10.7786 11.9425 10.4366C12.0711 10.106 12.1593 9.72787 12.1841 9.17418C12.2093 8.61921 12.2152 8.44233 12.2152 7.0299C12.2152 5.61746 12.2093 5.44017 12.1841 4.88561C12.1589 4.33189 12.0711 3.95359 11.9425 3.62317C11.8093 3.2812 11.6316 2.99131 11.3426 2.70184C11.0536 2.41237 10.7632 2.23471 10.4217 2.10193C10.0906 1.97336 9.71249 1.88515 9.15923 1.86035C8.60459 1.83502 8.42738 1.82886 7.01515 1.82886C5.60292 1.82886 5.42529 1.83472 4.87044 1.86035"
+                      fill="white"/>
+                  </svg>
+                </div>
+              </a><a href="#" class="footer__sm-link w-inline-block">
+                <div class="footer__sm-svg w-embed">
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M7.00006 0C3.13408 0 1.52588e-05 3.13407 1.52588e-05 7.00004C1.52588e-05 10.4674 2.52367 13.3389 5.83259 13.895V8.46044H4.14398V6.50478H5.83259V5.06275C5.83259 3.38959 6.85451 2.47781 8.34731 2.47781C9.06227 2.47781 9.67669 2.53108 9.85505 2.55455V4.30345L8.81969 4.30395C8.00803 4.30395 7.85155 4.68957 7.85155 5.25565V6.50378H9.78825L9.53565 8.45944H7.85155V13.9417C11.3149 13.5202 14 10.5755 14 6.99804C14 3.13407 10.866 0 7.00006 0Z"
+                      fill="currentColor"/>
+                  </svg>
+                </div>
+              </a><a href="#" class="footer__sm-link w-inline-block">
+                <div class="footer__sm-svg w-embed">
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M7.00004 6.10352e-05C3.13403 6.10352e-05 5.34058e-05 3.13403 5.34058e-05 7.00003C5.34058e-05 10.866 3.13403 14 7.00004 14C10.866 14 14.0001 10.866 14.0001 7.00003C14 3.13403 10.866 6.10352e-05 7.00004 6.10352e-05ZM5.13243 10.3842H3.59551V5.41886H5.13243V10.3842ZM4.35665 4.76861C3.85471 4.76861 3.44779 4.35839 3.44779 3.85243C3.44779 3.34641 3.85476 2.93621 4.35665 2.93621C4.85853 2.93621 5.26544 3.34641 5.26544 3.85243C5.26547 4.35842 4.85856 4.76861 4.35665 4.76861ZM10.892 10.3842H9.36256V7.77781C9.36256 7.06295 9.09102 6.66391 8.52577 6.66391C7.91058 6.66391 7.58919 7.07951 7.58919 7.77781V10.3842H6.11511V5.41886H7.58919V6.08761C7.58919 6.08761 8.0326 5.26741 9.08546 5.26741C10.1383 5.26741 10.8921 5.91029 10.8921 7.24022L10.892 10.3842Z"
+                      fill="currentColor"/>
+                  </svg>
+                </div>
+              </a><a href="#" class="footer__sm-link w-inline-block">
+                <div class="footer__sm-svg w-embed">
+                  <svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_61_574-209504)">
+                      <path
+                        d="M4.86693 12.25C9.9278 12.25 12.6954 8.03191 12.6954 4.37416C12.6954 4.25437 12.693 4.13513 12.6876 4.01638C13.2261 3.62437 13.6909 3.13899 14.0601 2.58301C13.5671 2.80351 13.0366 2.95192 12.48 3.01883C13.0481 2.67615 13.4842 2.13402 13.69 1.48781C13.1498 1.81015 12.559 2.03738 11.9428 2.15971C11.4407 1.62167 10.7259 1.28516 9.93442 1.28516C8.41498 1.28516 7.18284 2.52478 7.18284 4.05281C7.18284 4.27005 7.20702 4.48129 7.25422 4.68397C4.96746 4.56821 2.93972 3.46674 1.58266 1.79189C1.33823 2.21432 1.20967 2.69442 1.2101 3.18316C1.2101 4.14352 1.69583 4.99129 2.43451 5.48728C1.99757 5.47386 1.57022 5.35512 1.1884 5.14107C1.18799 5.15269 1.18799 5.16401 1.18799 5.17643C1.18799 6.51696 2.13639 7.63622 3.39536 7.88984C3.15891 7.95462 2.91492 7.98738 2.66985 7.98723C2.49286 7.98723 2.32038 7.96972 2.15275 7.93734C2.50303 9.03717 3.51875 9.83752 4.72301 9.85988C3.7813 10.6024 2.59502 11.0447 1.30572 11.0447C1.08639 11.0449 0.867244 11.0321 0.649414 11.0064C1.86711 11.7916 3.31301 12.2498 4.86707 12.2498"
+                        fill="currentColor"/>
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_61_574-209504">
+                        <rect width="14" height="12.25" fill="white"/>
+                      </clipPath>
+                    </defs>
+                  </svg>
+                </div>
+              </a></div>
+            </div>
+          </div>
+          <a href="#" class="btn footer__btn w-inline-block">
+            <div>Do Not Sell My<br/>Personal Information</div>
+            <div class="btn-arrow svg-button-arrow">
+              <div class="svg w-embed">
+                <svg width="100%" viewBox="0 0 7 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1.00749 1.10278L5.52171 5.60353L1 10.1028" stroke="currentColor" stroke-width="1.49726"
+                        stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+            </div>
+          </a><img
+            src="https://assets.website-files.com/629f58fef317062068fa4ccc/62a34eba39482fd84892dfb8_equal-housing.svg"
+            loading="lazy" alt="" class="footer__equal-logo"/></div>
+        <div class="footer__right-side">
+          <div class="footer__nav">
+            <ul role="list" class="navbar__list footer__list w-list-unstyled">
+              <li class="navbar__list-item">
+                <div data-hover="false" data-delay="0" class="navbar-list-link__dd w-dropdown">
+                  <div class="navbar-list__link navbar-list-link__dd-link footer__dd-link w-dropdown-toggle">
+                    <div class="dd-icon footer__dd-icon w-icon-dropdown-toggle"></div>
+                    <div>Our company</div>
+                  </div>
+                  <nav class="navbar__dd-list w-dropdown-list"><a href="#" class="navbar__dd-link w-dropdown-link">Privacy,
+                    security &amp; legal</a><a href="#" class="navbar__dd-link w-dropdown-link">State Licensing</a><a
+                    href="#" class="navbar__dd-link w-dropdown-link">NMLS Consumer Access</a><a href="#"
+                                                                                                class="navbar__dd-link w-dropdown-link">Careers</a><a
+                    href="#" class="navbar__dd-link w-dropdown-link">Contact Us</a><a href="#"
+                                                                                      class="navbar__dd-link w-dropdown-link">Affiliated
+                    Business<br/>Arrangement Disclosure</a><a href="#" class="navbar__dd-link w-dropdown-link">For
+                    complaints in Texas</a></nav>
+                </div>
+              </li>
+              <li class="navbar__list-item">
+                <div data-hover="false" data-delay="0" class="navbar-list-link__dd w-dropdown">
+                  <div class="navbar-list__link navbar-list-link__dd-link footer__dd-link w-dropdown-toggle">
+                    <div class="dd-icon footer__dd-icon w-icon-dropdown-toggle"></div>
+                    <div>Tools &amp; Resources</div>
+                  </div>
+                  <nav class="navbar__dd-list w-dropdown-list"><a href="#" class="navbar__dd-link w-dropdown-link">Privacy,
+                    security &amp; legal</a><a href="#" class="navbar__dd-link w-dropdown-link">State Licensing</a><a
+                    href="#" class="navbar__dd-link w-dropdown-link">NMLS Consumer Access</a><a href="#"
+                                                                                                class="navbar__dd-link w-dropdown-link">Careers</a><a
+                    href="#" class="navbar__dd-link w-dropdown-link">Contact Us</a><a href="#"
+                                                                                      class="navbar__dd-link w-dropdown-link">Affiliated
+                    Business<br/>Arrangement Disclosure</a><a href="#" class="navbar__dd-link w-dropdown-link">For
+                    complaints in Texas</a></nav>
+                </div>
+              </li>
+              <li class="navbar__list-item">
+                <div data-hover="false" data-delay="0" class="navbar-list-link__dd w-dropdown">
+                  <div class="navbar-list__link navbar-list-link__dd-link footer__dd-link w-dropdown-toggle">
+                    <div class="dd-icon footer__dd-icon w-icon-dropdown-toggle"></div>
+                    <div>Contact Us</div>
+                  </div>
+                  <nav class="navbar__dd-list w-dropdown-list"><a href="#" class="navbar__dd-link w-dropdown-link">Privacy,
+                    security &amp; legal</a><a href="#" class="navbar__dd-link w-dropdown-link">State Licensing</a><a
+                    href="#" class="navbar__dd-link w-dropdown-link">NMLS Consumer Access</a><a href="#"
+                                                                                                class="navbar__dd-link w-dropdown-link">Careers</a><a
+                    href="#" class="navbar__dd-link w-dropdown-link">Contact Us</a><a href="#"
+                                                                                      class="navbar__dd-link w-dropdown-link">Affiliated
+                    Business<br/>Arrangement Disclosure</a><a href="#" class="navbar__dd-link w-dropdown-link">For
+                    complaints in Texas</a></nav>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="footer__text">Prosperity Home Mortgage, LLC is an Equal Opportunity Employer and is committed to
+            Diversity, Equity, and Inclusion in the workplace. We prohibit discrimination and harassment of any type
+            based on race, color, religion, age, sex, national origin, disability status, genetic information, protected
+            veteran status, sexual orientation, gender identity or expression, or any other characteristic protected by
+            federal, state or local laws.
+          </div>
+          <div class="footer__text">This policy applies to all terms and conditions of employment, including recruiting,
+            hiring, placement, promotion, termination, layoff, recall, transfer, leaves of absence, compensation and
+            training.
+          </div>
+          <div class="footer__text">All first mortgage products are provided by Prosperity Home Mortgage, LLC. (877)
+            275-1762. Prosperity Home Mortgage, LLC products may not be available in all areas. Not all borrowers will
+            qualify. Licensed by the Department of Financial Protection and Innovation under the California Residential
+            Mortgage Lending Act. Licensed by the Delaware State Bank Commissioner. Massachusetts Mortgage Lender
+            License ML75164. Licensed by the NJ Department of Banking and Insurance. Also licensed in AK, AL, AR, AZ,
+            CO, CT, DC, FL, GA, ID, IL, IN, KS, KY, LA, MD, ME, MI, MN, MO, MS, MT, NC, ND, NE, NH, NM, NV, OH, OK, OR,
+            PA, RI, SC, SD, TN, TX, UT, VA, VT, WA, WI, WV and WY.
+          </div>
+          <div class="footer__text foooter-text--bold">This site is not authorized by the New York State Department of
+            Financial Services. No mortgage solicitation activity or loan applications for properties located in the
+            State of New York can be facilitated through this site.
+          </div>
+          <div class="footer__text">NMLS ID #75164 (For licensing information go to: NMLS Consumer Access at
+            http://www.nmlsconsumeraccess.org/)
+          </div>
+          <div class="footer__text">© 2022 Prosperity Home Mortgage, LLC.</div>
+        </div>
+      </div>
+    </div>
   </div>
-</header>
+</div>
+<script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=629f58fef317062068fa4ccc"
+        type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+        crossorigin="anonymous"></script>
+<script src="https://assets.website-files.com/629f58fef317062068fa4ccc/js/webflow.c0833d913.js"
+        type="text/javascript"></script>
+<!--[if lte IE 9]>
+<script src="//cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
+<script src="https://npmcdn.com/isotope-layout@3.0/dist/isotope.pkgd.min.js"></script>
+<script>
+  // document ready wrapper
+  $(document).ready(function () {
 
-<main>
-  <div class="container">
-	<a href="about.html">About page</a>
-	<br> <br>
-	<div class="button-wrapper"></div>
-  </div>
+    // find all filter buttons
+    const filterToggles = document.querySelectorAll('[data-filter]');
 
-</main>
-<footer></footer>
+    // go over each filter button
+    filterToggles.forEach(function (toggle) {
 
-<script src="./js/index.js"></script>
+      let attrVal = toggle.getAttribute(['data-filter']); // find the filter attr
+      let newVal = attrVal.toLowerCase().replace(' ', '-'); // hyphenate filter attr val
+      toggle.setAttribute('data-filter', newVal); // set filter attr with new val
+
+    });
+
+    // go over all collection item category label elems
+    $('.w-dyn-item .category').each(function (index, element) {
+      var _this = $(element);
+      // lowercase, hyphenate and add as a class to dyn-item for isotope filtering
+      _this.parent().parent().addClass(_this.text().toLowerCase().replace(' ', '-'));
+    });
+
+
+    // quick search regex
+    let qsRegex;
+    let buttonFilter;
+
+    // init Isotope
+    const $grid = $('.brokers-map__cl').isotope({
+      itemSelector: '.brokers-map__ci',
+      stagger: 30,
+      filter: function () {
+        var $this = $(this);
+        var searchResult = qsRegex ? $this.text().match(qsRegex) : true;
+        var buttonResult = buttonFilter ? $this.is(buttonFilter) : true;
+        return searchResult && buttonResult;
+      }
+    });
+
+    // reveal all items after init
+    const $items = $grid.find('.w-dyn-item');
+    $grid.addClass('is-showing-items').isotope('revealItemElements', $items);
+
+    $('#filters').on('click', 'button', function () {
+      buttonFilter = $(this).attr('data-filter');
+      $grid.isotope();
+    });
+
+    // use value of search field to filter
+    const $quicksearch = $('#quicksearch').keyup(debounce(function () {
+      qsRegex = new RegExp($quicksearch.val(), 'gi');
+      $grid.isotope();
+    }));
+
+    // change is-checked class on buttons
+    $('.button-group').each(function (i, buttonGroup) {
+      const $buttonGroup = $(buttonGroup);
+      $buttonGroup.on('click', 'button', function () {
+        $buttonGroup.find('.is-checked').removeClass('is-checked');
+        $(this).addClass('is-checked');
+      });
+    });
+
+
+    // debounce so filtering doesn't happen every millisecond
+    function debounce(fn, threshold) {
+      let timeout;
+      return function debounced() {
+        if (timeout) {
+          clearTimeout(timeout);
+        }
+
+        function delayed() {
+          fn();
+          timeout = null;
+        }
+
+        setTimeout(delayed, threshold || 100);
+      };
+    };
+
+
+    // disable search from submitting
+    $('#quicksearch').on('keyup keypress', function (e) {
+      const keyCode = e.keyCode || e.which;
+      if (keyCode === 13) {
+        e.preventDefault();
+        return false;
+      }
+    });
+
+  });
+</script>
+<!--need it for map-->
+<script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"></script>
+<script src="js/index.js"></script>
 </body>
 </html>
+

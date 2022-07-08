@@ -6,7 +6,7 @@
   "scripts": {
     "server": "NODE_ENV=development webpack serve",
     "build-dev": "webpack --mode development",
-    "watch": "NODE_ENV=development webpack",
+    "watch": "NODE_ENV=development webpack"
   },
   "devDependencies": {
     "@babel/core": "^7.17.5",
@@ -40,6 +40,7 @@
   },
   "dependencies": {
     "axios": "^0.26.1",
+    "leaflet": "^1.8.0",
     "lodash": "^4.17.21",
     "on-change": "^4.0.0",
     "yup": "^0.32.11"

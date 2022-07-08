@@ -1,9 +1,0 @@
-.container {
-  width: 100%;
-  max-width: $desktop-m;
-  margin: 0 auto;
-
-  @include media-desktop-m {
-    padding: 0 20px;
-  }
-}

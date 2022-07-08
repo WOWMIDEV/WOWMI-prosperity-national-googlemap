@@ -1,25 +1,48 @@
-/* UTILS */
-@import 'utils/reset';
-@import 'utils/fonts';
-@import 'utils/vars';
-@import 'utils/base';
-@import 'utils/mixins';
-@import 'utils/placeholders';
+#map {
+  width: 100%;
+  height: 100%;
+}
 
-/* LAYOUTS */
-@import 'layouts/header';
-@import 'layouts/section';
-@import 'layouts/container';
-@import 'layouts/columns';
-@import 'layouts/footer';
+.map-modal-img {
+  width: 117px;
+  max-width: 117px;
+  height: 71px;
+  object-fit: cover;
+}
 
-/* COMPONENTS */
-@import 'components/link';
-@import 'components/text';
-@import 'components/button';
-@import 'components/image';
-@import 'components/card';
+.brokers-map__card {
+  transition: background-color 0.7s ease-in-out;
+}
 
-* {
-  color: red;
+.brokers-map__card.js--active {
+  background-color: #07becb;
+  color: #fff;
+}
+
+.brokers-map__card.js--active .brokers-map-card__info {
+  color: #fff;
+}
+
+.brokers-map__card.js--active .brokers-map-card__link {
+  color: #fff;
+}
+
+.map-wrapper .leaflet-top,
+.map-wrapper .leaflet-bottom {
+  z-index: 700;
+}
+
+.map-wrapper .leaflet-popup-content-wrapper {
+  background: #ffffff;
+  box-shadow: 0px 4px 80px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+.map-wrapper .leaflet-popup-content {
+  margin: 9px 24px;
+}
+
+.map-wrapper .leaflet-popup-content-wrapper,
+.map-wrapper .leaflet-popup-tip {
+  box-shadow: 0px 4px 80px rgba(0, 0, 0, 0.1);
 }

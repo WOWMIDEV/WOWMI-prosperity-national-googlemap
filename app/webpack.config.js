@@ -28,8 +28,7 @@ module.exports = {
   },
 
   entry: {
-    index: './src/js/index.ts',
-    about: './src/js/about.js',
+    index: './src/js/index.js',
   },
 
   output: {
@@ -58,9 +57,7 @@ module.exports = {
       {
         test: /\.tsx?$/,
         use: 'ts-loader',
-        include: [
-          path.resolve(__dirname, 'src/js'),
-        ],
+        include: [path.resolve(__dirname, 'src/js')],
       },
       // STYLES
       {
@@ -102,10 +99,9 @@ module.exports = {
     ],
   },
 
-  plugins:
-    [
-      new MiniCssExtractPlugin({
-        filename: 'css/[name].css',
-      }),
-    ],
+  plugins: [
+    new MiniCssExtractPlugin({
+      filename: 'css/[name].css',
+    }),
+  ],
 };
