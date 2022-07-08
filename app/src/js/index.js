@@ -11,10 +11,6 @@ const elements = {
   collectionList: document.querySelector('[data-collection="data"]'),
 };
 
-const state = {
-  currentCard: null,
-};
-
 export const webflowRestart = () => {
   // eslint-disable-next-line no-unused-expressions
   window.Webflow && window.Webflow.destroy();
@@ -37,7 +33,7 @@ const geojsonFeature = [...elements.listOfCompaniesInfo].reduce((prev, curr) => 
       company: nameEl.textContent,
       companyWebsite: companyWebsite.textContent,
       popupContent: `
-      <div data-modal="modal" class="modal-open-document">
+      <div data-modal="modal">
         <img class="map-modal-img" src='${imageLink.src}'/>
       </div>
       `,
@@ -80,19 +76,24 @@ function onEachFeature(feature, layer) {
 
 const apdateModalLink = (link, element) => {
   const el = element;
-  el.href = link;
+  if (el.href) {
+    el.href = link;
+  }
 };
 
 const onClickMarker = (event) => {
   const { collectionList } = elements;
   const companyCards = collectionList.querySelectorAll('[data-company="name"]');
+  const companyCardsParent = collectionList.querySelectorAll('.brokers-map__card');
   const companyFromGeoJson = event.target.feature.properties.company;
 
-  if (state.currentCard) {
-    state.currentCard.classList.remove('js--active');
+  const isActiveCard = [...companyCardsParent].find((card) => card.classList.contains('js--active'));
+
+  if (isActiveCard) {
+    isActiveCard.classList.remove('js--active');
   }
 
-  const curentCard = [...companyCards].find((card) => {
+  const currentCard = [...companyCards].find((card) => {
     const companyNameFromCards = card.textContent;
     if (companyNameFromCards && companyFromGeoJson === companyNameFromCards) {
       return card;
@@ -100,8 +101,7 @@ const onClickMarker = (event) => {
     return false;
   });
 
-  const cardParent = curentCard.closest('.brokers-map__card');
-  state.currentCard = cardParent;
+  const cardParent = currentCard.closest('.brokers-map__card');
   cardParent.classList.add('js--active');
   cardParent.scrollIntoView({ block: 'center', behavior: 'smooth' });
 
