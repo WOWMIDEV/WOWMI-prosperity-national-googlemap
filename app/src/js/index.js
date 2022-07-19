@@ -39,8 +39,6 @@ const geojsonFeature = [...elements.listOfCompaniesInfo].reduce((prev, curr) => 
   const imageLink = curr.querySelector('[data-company="image"]');
   const companyWebsite = curr.querySelector('[data-company="website"]');
 
-  console.log(companyWebsite.textContent);
-
   const data = {
     type: 'Feature',
     properties: {
@@ -61,35 +59,9 @@ const geojsonFeature = [...elements.listOfCompaniesInfo].reduce((prev, curr) => 
   return [...prev, data];
 }, []);
 
-console.log(geojsonFeature);
-
-// const currentCard2 = [...companyCards].find((card) => {
-//   const companyNameFromCards = card.textContent;
-//   if (companyNameFromCards && companyFromGeoJson === companyNameFromCards) {
-//     return card;
-//   }
-//   return false;
-// });
-
 elements.companyCard.forEach((card) => {
-  // jsonCard.properties.companyWebsite;
-  // if (companyNameFromCardsForModal && companyFromGeoJson === companyNameFromCardsForModal) {
-  //
-  // }
-  //
   card.addEventListener('click', (event) => {
     const companyNameFromCardsForModal = event.currentTarget.querySelector('.brokers-map-card__link');
-    console.log(companyNameFromCardsForModal);
-    // const companyNameFromCardsForModal = event.currentTarget.querySelector('[data-company="name"]');
-    // console.log(event.currentTarget, 'target');
-    // console.log(companyNameFromCardsForModal.textContent, 'text');
-    //
-    // function checkEqualCompany(element) {
-    //   if (companyNameFromCardsForModal === element.properties.company) {
-    //     return element;
-    //   }
-    // }
-    // console.log(geojsonFeature.find(checkEqualCompany), 'eleMENT');
     apdateModalLink(companyNameFromCardsForModal.textContent, elements.companyLink);
   });
 });
@@ -136,9 +108,6 @@ const onClickMarker = (event) => {
     }
     return false;
   });
-
-  console.log('target link', event.target.feature.properties.companyWebsite);
-
   const cardParent = currentCard.closest('.brokers-map__card');
   cardParent.classList.add('js--active');
   cardParent.scrollIntoView({ block: 'center', behavior: 'smooth' });
