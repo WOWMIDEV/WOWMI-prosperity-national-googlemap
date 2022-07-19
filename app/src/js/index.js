@@ -7,9 +7,14 @@ const ZOOM = 4;
 
 const elements = {
   companyLink: document.querySelector('[data-company="modal-link"]'),
+  companyCard: document.querySelectorAll('.modal-open-document'),
   listOfCompaniesInfo: document.querySelectorAll('[data-company="data"]'),
   collectionList: document.querySelector('[data-collection="data"]'),
 };
+
+const { collectionList } = elements;
+const companyCards = collectionList.querySelectorAll('[data-company="name"]');
+const companyCardsParent = collectionList.querySelectorAll('.brokers-map__card');
 
 export const webflowRestart = () => {
   // eslint-disable-next-line no-unused-expressions
@@ -21,11 +26,20 @@ export const webflowRestart = () => {
   document.dispatchEvent(new Event('readystatechange'));
 };
 
+const apdateModalLink = (link, element) => {
+  const el = element;
+  if (el.href) {
+    el.href = link;
+  }
+};
+
 const geojsonFeature = [...elements.listOfCompaniesInfo].reduce((prev, curr) => {
   const nameEl = curr.querySelector('[data-company="name"]');
   const coordsEl = curr.querySelector('[data-company="coords"]');
   const imageLink = curr.querySelector('[data-company="image"]');
   const companyWebsite = curr.querySelector('[data-company="website"]');
+
+  console.log(companyWebsite.textContent);
 
   const data = {
     type: 'Feature',
@@ -46,6 +60,39 @@ const geojsonFeature = [...elements.listOfCompaniesInfo].reduce((prev, curr) => 
   // todo: add .reverse() for mapbox and remove for google map
   return [...prev, data];
 }, []);
+
+console.log(geojsonFeature);
+
+// const currentCard2 = [...companyCards].find((card) => {
+//   const companyNameFromCards = card.textContent;
+//   if (companyNameFromCards && companyFromGeoJson === companyNameFromCards) {
+//     return card;
+//   }
+//   return false;
+// });
+
+elements.companyCard.forEach((card) => {
+  // jsonCard.properties.companyWebsite;
+  // if (companyNameFromCardsForModal && companyFromGeoJson === companyNameFromCardsForModal) {
+  //
+  // }
+  //
+  card.addEventListener('click', (event) => {
+    const companyNameFromCardsForModal = event.currentTarget.querySelector('.brokers-map-card__link');
+    console.log(companyNameFromCardsForModal);
+    // const companyNameFromCardsForModal = event.currentTarget.querySelector('[data-company="name"]');
+    // console.log(event.currentTarget, 'target');
+    // console.log(companyNameFromCardsForModal.textContent, 'text');
+    //
+    // function checkEqualCompany(element) {
+    //   if (companyNameFromCardsForModal === element.properties.company) {
+    //     return element;
+    //   }
+    // }
+    // console.log(geojsonFeature.find(checkEqualCompany), 'eleMENT');
+    apdateModalLink(companyNameFromCardsForModal.textContent, elements.companyLink);
+  });
+});
 
 const map = L.map('map').setView(COORDS_CENTER_MAP, ZOOM);
 
@@ -74,19 +121,8 @@ function onEachFeature(feature, layer) {
   });
 }
 
-const apdateModalLink = (link, element) => {
-  const el = element;
-  if (el.href) {
-    el.href = link;
-  }
-};
-
 const onClickMarker = (event) => {
-  const { collectionList } = elements;
-  const companyCards = collectionList.querySelectorAll('[data-company="name"]');
-  const companyCardsParent = collectionList.querySelectorAll('.brokers-map__card');
   const companyFromGeoJson = event.target.feature.properties.company;
-
   const isActiveCard = [...companyCardsParent].find((card) => card.classList.contains('js--active'));
 
   if (isActiveCard) {
@@ -101,10 +137,11 @@ const onClickMarker = (event) => {
     return false;
   });
 
+  console.log('target link', event.target.feature.properties.companyWebsite);
+
   const cardParent = currentCard.closest('.brokers-map__card');
   cardParent.classList.add('js--active');
   cardParent.scrollIntoView({ block: 'center', behavior: 'smooth' });
-
   apdateModalLink(event.target.feature.properties.companyWebsite, elements.companyLink);
 };
 
